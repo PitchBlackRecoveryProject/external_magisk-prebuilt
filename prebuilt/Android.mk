@@ -10,7 +10,11 @@ endif
 include $(CLEAR_VARS)
 LOCAL_MODULE := magiskboot
 LOCAL_MODULE_STEM := magiskboot
-LOCAL_MODULE_TAGS := eng
+    ifeq ($(shell test $(PLATFORM_SDK_VERSION) -ge 29; echo $$?),0)
+        LOCAL_MODULE_TAGS := optional
+    else
+        LOCAL_MODULE_TAGS := eng
+    endif
 LOCAL_MODULE_CLASS := RECOVERY_EXECUTABLES
 LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
 LOCAL_SRC_FILES := $(MAGISKBOOT_TARGET)
