@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 # Some handy paths
 MAGISK_ROOT_PATH := $(LOCAL_PATH)
-EXT_PATH := $(LOCAL_PATH)/external
+EXT_PATH := $(TOP)/$(LOCAL_PATH)/external
 SE_PATH := $(EXT_PATH)/selinux
 LIBSELINUX := $(SE_PATH)/libselinux/include
 LIBSEPOL := $(SE_PATH)/libsepol/include $(SE_PATH)/libsepol/cil/include
